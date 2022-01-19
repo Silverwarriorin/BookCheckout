@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Full Catalog</h1>
+
+<p></p>
+<%= link_to "Back", "/books" %>
+
+<div id="books">
+    <% @books.each do |book| %>
+    <li>
+        <%= link_to book.title, book %>
+    </li>
+    <% end %>
+</div>

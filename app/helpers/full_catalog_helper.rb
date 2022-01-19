@@ -1,0 +1,2 @@
+module FullCatalogHelper
+end

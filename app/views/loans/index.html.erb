@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Loans</h1>
+
+<div id="loans">
+  <% @loans.each do |loan| %>
+    <% unless loan.checked_in_at != nil %>
+        <li>
+
+              <%= link_to "gotta add title here", loan%>
+
+        </li>
+    <% end %>
+  <% end %>
+</div>
+
+<%= link_to "New loan", new_loan_path %>
+<p></p>
+<%= link_to "Back", "/articles" %>

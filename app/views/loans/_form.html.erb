@@ -1,0 +1,44 @@
+<%= form_with(model: loan) do |form| %>
+  <% if loan.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(loan.errors.count, "error") %> prohibited this loan from being saved:</h2>
+
+      <ul>
+        <% loan.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <p>
+      To add a book, type its ID number in the Book field, this can be found in the catalog, then type the student ID in the Student field, then the date in the date field.
+    </p>
+  </div>
+  <div>
+    <%= form.label "Book ID", style: "display: block" %>
+    <%= form.number_field :book_id %>
+  </div>
+
+  <div>
+    <%= form.label "Student ID", style: "display: block" %>
+    <%= form.number_field :student_id %>
+  </div>
+
+  <div>
+    <%= form.label :checked_out_at, style: "display: block" %>
+    <%= form.datetime_field :checked_out_at %>
+  </div>
+  <div>
+    <p>Leave blank until you check the book in</p>
+  </div>
+  <div>
+    <%= form.label :checked_in_at, style: "display: block" %>
+    <%= form.datetime_field :checked_in_at %>
+  </div>
+
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
